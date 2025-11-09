@@ -11,8 +11,6 @@ The video homework uses emojis to represent the significance of each video. Belo
 | **Difficulty**| Easy                  | :blush:        |
 |               | Challenging           | :sweat_smile:        |
 
-### Week 5: 
-
 
 - :star: Building Node.js User Authentication - Password Login (13 minutes)
   - https://youtu.be/Ud5xKCYQTjM

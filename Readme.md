@@ -46,7 +46,8 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 - Another pair programming session focused on building two APIs using the MVC architecture.
   - [Summary](./material/auth-middlware.md)
-  - [Pair Programming Activity](./material/be-pp.md)
+  - [Pair Programming Activity](./material/be-pp1.md)
+  - [Pair Programming Activity 2](./material/be-pp2.md)
   
 > I strongly recommend completing the pair activity today. I'll keep the breakout rooms open for you.
 

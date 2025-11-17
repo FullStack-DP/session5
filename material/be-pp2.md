@@ -17,23 +17,13 @@ Throughout the activity, you will switch roles: the driver (who writes code) bec
 1. **Decide Initial Roles**:
    - Determine who will start as the driver and who will be the navigator. Remember to switch roles after each major step.
 
-2. **Clone or Copy the Starter Code**:
-   We will start from the tours API from last week. Choose ONE approach:
-   
-   **Option A: Clone from GitHub** (Recommended)
-   ```bash
-   git clone https://github.com/tx00-resources-en/week3-be-pp-sample-sol week4-be-pp
-   cd week4-be-pp
-   rm -rf .git
-   ```
-   
-   **Option B: Copy from Local Files**
-   ```bash
-   cp -r ./session5/material/src/src1 week4-be-pp
-   cd week4-be-pp
-   ```
-   
-   - **Explanation**: If cloning from GitHub, removing the `.git` directory ensures you start with a fresh Git history. If copying locally, you'll have a clean starting point without external dependencies.
+2. **Clone the starter code**:
+   - Use the following commands to get started:
+     ```bash
+     git clone https://github.com/tx00-resources-en/week4-be-pp-starter week4-be-pp
+     cd week4-be-pp
+     ```
+   - **Note**: Remove the `.git` directory to ensure that you start with a fresh Git history for your new repository.
 
 3. **Install Dependencies and Run the Server**:
    - Install the required dependencies and start the development server:
@@ -42,7 +32,7 @@ Throughout the activity, you will switch roles: the driver (who writes code) bec
      npm run dev
      ```
 4. **Test the API**:
-   - Use Postman to ensure the API is functioning correctly by following [the steps from last week](https://github.com/FullStack-DP/session3/blob/main/material/be-pair-prog2.md#step-by-step-guide-to-testing-endpoints). Make sure all endpoints respond as expected.
+   - Use Postman to ensure the API is functioning correctly by following [the steps from last week](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week3/material/be-pair-prog2.md#step-by-step-guide-to-testing-endpoints). Make sure all endpoints respond as expected.
 
 5. **Initialize a New Git Repository and Push to GitHub**:
    - Follow the [instructions](./push-to-github.md) to make the directory a new Git repository and push your code to GitHub.
@@ -54,16 +44,13 @@ Throughout the activity, you will switch roles: the driver (who writes code) bec
      git remote add origin <your-repo-url>
      git push -u origin main
      ```
-   - **Important**: Ensure `.gitignore` is set up correctly to avoid committing `node_modules` directory.
+   - Ensure `.gitignore` is set up correctly to avoid committing `node_modules`.
 
 ### Step 1: Refactoring to MVC Pattern
 
-1. **Understand the Current Structure**:
-   - The starter code uses a handler/library pattern (`tourHandlers.js`, `tourLib.js`)
-   - You will refactor this to follow the MVC (Model-View-Controller) pattern, which separates concerns into Models, Controllers, and Routes for better maintainability and scalability
-
-2. **Refactor the Tours API**:
-   - Restructure your project as follows:
+1. **Refactor the Tours API**:
+   - Refactor the tours API to follow the MVC (Model-View-Controller) pattern. This pattern separates concerns, making the code modular and easier to maintain.
+   - Restructure the project as follows:
      ```
      /controllers
        tourControllers.js
@@ -74,16 +61,12 @@ Throughout the activity, you will switch roles: the driver (who writes code) bec
      app.js
      package.json
      ```
-   - **Refactoring Guide**: 
-     - Move data/array logic from `tourLib.js` → `tourModel.js`
-     - Move request handler functions from `tourHandlers.js` → `tourControllers.js`
-     - Create `tourRouter.js` to define all tour routes
-   - For reference, see the [cars API MVC example](https://github.com/tx00-resources-en/starter-api-cars-mvc).
+   - For reference, see the [cars API example](https://github.com/tx00-resources-en/starter-api-cars-mvc).
 
-3. **Ensure Functionality**:
+2. **Ensure Functionality**:
    - After refactoring, verify that the API is still functional by testing all endpoints using Postman. Check that each endpoint returns the expected response.
 
-4. **Commit Changes**:
+3. **Commit Changes**:
    - Commit your changes with a meaningful message (e.g., "Refactor tours API to MVC pattern").
 
 ### Step 2: Update Status Codes
@@ -105,7 +88,7 @@ To adhere to RESTful principles, update the status codes returned by the API to 
      // To:
      res.status(201).json(newTour); // 201 Created
      ```
-   - **Why**: `204 No Content` indicates successful deletion without returning content, and `201 Created` indicates successful resource creation. These codes follow RESTful conventions.
+   - These status codes are used to adhere to RESTful principles: `204 No Content` indicates successful deletion without returning content, and `201 Created` indicates successful resource creation.
 
 2. **Test the Modifications**:
    - Use Postman to test the modified endpoints. Check that `DELETE` requests return a `204 No Content` status and `POST` requests return a `201 Created` status.
@@ -127,7 +110,9 @@ Now, you will add functionality for a new "user" entity.
        "phone_number": "+358401234567",
        "gender": "Male",
        "date_of_birth": "2000-01-15",
-       "membership_status": "Active"
+       "membership_status": "Active",
+       "account_verified": true,
+       "country": "Finland"
      }
      ```
 
@@ -159,21 +144,16 @@ Now, you will add functionality for a new "user" entity.
 
 ### Step 4: Modify Routes
 
-For best practice, let's modify the base routes.
-
 1. **Update Routes in `app.js`**:
    - Ensure routes are accessible under `/api/tours` and `/api/users`:
      ```javascript
      app.use('/api/tours', tourRouter);
      app.use('/api/users', userRouter);
      ```
-
 2. **Test Modified Routes**:
    - Use Postman to test the modified routes (e.g., `GET /api/users`, `GET /api/tours`). Verify that all endpoints respond correctly under the new base paths.
 
 ### Step 5: Implement Third-Party Middleware
-
-Integrate Morgan, a third-party middleware, to log HTTP requests and errors.
 
 1. **Install `morgan` Middleware**:
    ```bash
@@ -186,11 +166,11 @@ Integrate Morgan, a third-party middleware, to log HTTP requests and errors.
      const morgan = require('morgan');
      app.use(morgan('tiny'));
      ```
-   - **Morgan Format Options**:
+   - **Explanation**:
      - **dev**: Concise output colored by response status for development use.
      - **short**: Shorter than default, includes response time.
      - **tiny**: Minimal output.
-   - **Custom Format Example**:
+   - Example of a custom logging format:
      ```javascript
      app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
      ```
@@ -206,15 +186,8 @@ Integrate Morgan, a third-party middleware, to log HTTP requests and errors.
 
 ### Step 6: Implement Custom Middleware for Authentication
 
-To protect routes, implement custom middleware to enforce role-based access control.
-
 1. **Create `auth.js` Middleware**:
-   - Inside the `middleware` folder, create `auth.js` to check if the user is an admin. 
-   - **Middleware Logic**:
-     - Check for an `admin` query parameter (e.g., `?admin=true`) or authorization header
-     - If admin is verified, allow the request to proceed
-     - If not, return a `403 Forbidden` status
-   - Refer to the [Express Middleware In Depth guide](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/) for implementation patterns.
+   - Inside the `middleware` folder, create `auth.js` to check if the role is admin. Use code from the [homework video](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/).
 
 2. **Import and Use the Middleware**:
    - Import `auth.js` into `userRouter.js` and `tourRouter.js`.
@@ -243,4 +216,4 @@ To protect routes, implement custom middleware to enforce role-based access cont
 ## Links
 
 - [How To Use And Write Express Middleware](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/)
-- [Every Important HTTP Status Code Explained](https://blog.webdevsimplified.com/2022-12/http-status-codes/)
+- [Every Important HTTP Status Code Explained](https://blog.webdevsimplified.com/2022-12/http-status-codes/) 

@@ -38,10 +38,10 @@ Before you start, decide:
 
 ```bash
 # Download the starter code from GitHub
-git clone https://github.com/tx00-resources-en/week3-be-pp-sample-sol week4-be-pp
+git clone https://github.com/tx00-resources-en/week3-be-pp-sample-sol week5-be-pp1
 
 # Move into the new folder
-cd week4-be-pp
+cd week5-be-pp1
 
 # Remove the old Git history (so you start fresh)
 rm -rf .git

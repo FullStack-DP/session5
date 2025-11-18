@@ -20,8 +20,8 @@ Throughout the activity, you will switch roles: the driver (who writes code) bec
 2. **Clone the starter code**:
    - Use the following commands to get started:
      ```bash
-     git clone https://github.com/tx00-resources-en/week4-be-pp-starter week4-be-pp
-     cd week4-be-pp
+     git clone https://github.com/tx00-resources-en/week4-be-pp-starter week5-be-pp2
+     cd week5-be-pp2
      ```
    - **Note**: Remove the `.git` directory to ensure that you start with a fresh Git history for your new repository.
 

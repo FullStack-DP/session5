@@ -29,15 +29,15 @@ In this lab, you will work on an Express server that uses Mongoose to interact w
 1. **Clone the Starter Repository:**
    - Clone the starter repository for the lab using the following command:
    ```bash
-   git clone https://github.com/tx00-resources-en/be-starter-v1 week4-be-activity1
+   git clone https://github.com/tx00-resources-en/be-starter-v1 week5-be-activity1
    ```
    - Remove the existing Git history to create a fresh project:
    ```bash
-   rm -rf week4-be-activity1/.git
+   rm -rf week5-be-activity1/.git
    ```
    - Navigate into the project directory and install the necessary dependencies:
    ```bash
-   cd week4-be-activity1
+   cd week5-be-activity1
    npm install
    ```
 

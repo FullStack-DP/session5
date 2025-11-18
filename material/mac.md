@@ -1,4 +1,4 @@
-
+<!-- 
 ### Step‑by‑Step Guide to Installing Homebrew on Mac
 
 #### 1. Install Command Line Tools
@@ -96,4 +96,4 @@ This installs MongoDB Community Edition and runs it as a background service.
 
 #### 5. Optional: Install MongoDB Tools
 Homebrew also installs **MongoDB Database Tools** (e.g., `mongodump`, `mongorestore`, `mongoimport`, `mongoexport`) automatically since version 4.4.1.
-
+ -->

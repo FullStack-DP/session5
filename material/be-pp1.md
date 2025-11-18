@@ -31,13 +31,10 @@ Before you start, decide:
 
 ---
 
-### 0.2 Get the Starter Code (Choose ONE Option)
+### 0.2 Get the Starter Code
 
-You have two ways to get the starter code. Pick one:
 
-**Option A: Clone from GitHub** ⭐ (Recommended - easiest)
-
-This downloads the code from the internet and puts it on your computer.
+**Clone from GitHub**: This downloads the code from the internet and puts it on your computer.
 
 ```bash
 # Download the starter code from GitHub
@@ -54,24 +51,6 @@ rm -rf .git
 - `git clone` = Download the code
 - `cd week4-be-pp` = Enter the folder
 - `rm -rf .git` = Delete the old Git history so you have a clean slate
-
----
-
-**Option B: Copy from Your Computer** (Offline option)
-
-This copies the starter code that's already saved on your computer.
-
-```bash
-# Copy the starter code from this course folder
-cp -r ./material/src/src1 week4-be-pp
-
-# Move into the new folder
-cd week4-be-pp
-```
-
-**What does this do?**
-- `cp -r` = Copy the entire folder (the `-r` means "copy recursively" - everything inside)
-- The code is now ready to use!
 
 ---
 

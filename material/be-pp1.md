@@ -267,7 +267,7 @@ module.exports = { getAllTours, addTour, ... };
 const { getAllTours, addTour } = require('../tourLib.js');
 
 // NEW:
-const { getAllTours, addTour } = require('../models/tourModel.js');
+const Tour = require('../models/tourModel.js');
 ```
 
 ---

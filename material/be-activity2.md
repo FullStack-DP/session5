@@ -16,15 +16,15 @@ In this activity, you will refactor the code you wrote in the first activity to 
 1. **Clone the Starter Repository:**
    - Clone the starter repository for the lab using the following command:
    ```bash
-   git clone https://github.com/tx00-resources-en/be-starter-v2 week4-be-activity2
+   git clone https://github.com/tx00-resources-en/be-starter-v2 week5-be-activity2
    ```
    - Remove the existing Git history to create a fresh project:
    ```bash
-   rm -rf week4-be-activity2/.git
+   rm -rf week5-be-activity2/.git
    ```
    - Navigate into the project directory and install the necessary dependencies:
    ```bash
-   cd week4-be-activity2
+   cd week5-be-activity2
    npm install
    ```
 
